@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%-4level] [%date{MM/dd/yyyy HH:mm:ss.sss}] [%thread] [%c{1}] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/slick-3-samples/log-file</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<FileNamePattern>log/slick-3-samples/log-file.%d{yyyy-MM-dd}.log.gz</FileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%-4level] [%date{MM/dd/yyyy HH:mm:ss.sss}] [%thread] [%c{1}] -%msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.yadu" level="ERROR" additivity="true">
+		<appender-ref ref="FILE"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+	<logger name="slick.jdbc.JdbcBackend" level="DEBUG"/>
+	<root level="error">
+		<appender-ref ref="FILE"/>
+		<appender-ref ref="CONSOLE"/>
+	</root>
+
+
+</configuration>

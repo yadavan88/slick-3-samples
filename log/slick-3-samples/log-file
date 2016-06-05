@@ -1,0 +1,146 @@
+[DEBUG] [06/05/2016 18:02:22.022] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 18:02:22.022] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 15ms
+[DEBUG] [06/05/2016 18:02:56.056] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 18:02:56.056] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 19ms
+[DEBUG] [06/05/2016 18:03:38.038] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 18:03:38.038] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 15ms
+[DEBUG] [06/05/2016 18:03:54.054] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 18:03:54.054] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 18ms
+[DEBUG] [06/05/2016 18:06:43.043] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: drop table "employee"."User"
+[DEBUG] [06/05/2016 18:06:44.044] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 26ms
+[DEBUG] [06/05/2016 18:06:44.044] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: drop table "employee"."Employee"
+[DEBUG] [06/05/2016 18:06:44.044] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 8ms
+[DEBUG] [06/05/2016 18:06:44.044] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: create table "employee"."Employee" ("EmployeeId" BIGSERIAL NOT NULL PRIMARY KEY,"FirstName" VARCHAR(150) NOT NULL,"LastName" VARCHAR(150) NOT NULL,"DOB" DATE NOT NULL,"IsDeleted" BOOLEAN DEFAULT false NOT NULL,"Gender" VARCHAR NOT NULL)
+[DEBUG] [06/05/2016 18:06:44.044] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 81ms
+[DEBUG] [06/05/2016 18:06:44.044] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: create table "employee"."User" ("UserId" BIGSERIAL NOT NULL PRIMARY KEY,"UserName" VARCHAR(150) NOT NULL,"Email" VARCHAR(150) NOT NULL,"Password" VARCHAR(150) NOT NULL,"IsDeleted" BOOLEAN DEFAULT false NOT NULL,"EmployeeId" BIGINT NOT NULL)
+[DEBUG] [06/05/2016 18:06:44.044] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 46ms
+[DEBUG] [06/05/2016 18:07:35.035] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: insert into "employee"."Employee" ("EmployeeId","FirstName","LastName","DOB","IsDeleted","Gender")  values (?,?,?,?,?,?)
+[DEBUG] [06/05/2016 18:07:35.035] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of batch took 19ms
+[DEBUG] [06/05/2016 18:07:35.035] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: insert into "employee"."User" ("UserName","Email","Password","IsDeleted","EmployeeId")  values (?,?,?,?,?)
+[DEBUG] [06/05/2016 18:07:35.035] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of batch took 10ms
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee"
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 14ms
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "FirstName" like 'S%'
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-2] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-3] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" order by "FirstName"
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-3] [s.j.J.benchmark] -Execution of prepared statement took 989µs
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-4] [s.j.J.statement] -Preparing statement: select count(1) from "employee"."Employee"
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-4] [s.j.J.benchmark] -Execution of prepared statement took 624µs
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-5] [s.j.J.statement] -Preparing statement: select "Gender", count(1) from "employee"."Employee" group by "Gender"
+[DEBUG] [06/05/2016 19:05:48.048] [AsyncExecutor.default-5] [s.j.J.benchmark] -Execution of prepared statement took 774µs
+[DEBUG] [06/05/2016 19:05:53.053] [AsyncExecutor.default-6] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:05:53.053] [AsyncExecutor.default-6] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:05:58.058] [AsyncExecutor.default-7] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:05:58.058] [AsyncExecutor.default-7] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee"
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 15ms
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "FirstName" like 'S%'
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-2] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-3] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" order by "FirstName" limit 1
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-3] [s.j.J.benchmark] -Execution of prepared statement took 2ms
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-4] [s.j.J.statement] -Preparing statement: select count(1) from "employee"."Employee"
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-4] [s.j.J.benchmark] -Execution of prepared statement took 628µs
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-5] [s.j.J.statement] -Preparing statement: select "Gender", count(1) from "employee"."Employee" group by "Gender"
+[DEBUG] [06/05/2016 19:07:35.035] [AsyncExecutor.default-5] [s.j.J.benchmark] -Execution of prepared statement took 808µs
+[DEBUG] [06/05/2016 19:07:40.040] [AsyncExecutor.default-6] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:07:40.040] [AsyncExecutor.default-6] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:07:45.045] [AsyncExecutor.default-7] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:07:45.045] [AsyncExecutor.default-7] [s.j.J.benchmark] -Execution of prepared statement took 2ms
+[DEBUG] [06/05/2016 19:26:10.010] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee"
+[DEBUG] [06/05/2016 19:26:11.011] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 16ms
+[DEBUG] [06/05/2016 19:26:11.011] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "FirstName" like 'S%'
+[DEBUG] [06/05/2016 19:26:11.011] [AsyncExecutor.default-2] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:26:11.011] [AsyncExecutor.default-3] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" order by "FirstName" limit 1
+[DEBUG] [06/05/2016 19:26:11.011] [AsyncExecutor.default-3] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:26:11.011] [AsyncExecutor.default-4] [s.j.J.statement] -Preparing statement: select count(1) from "employee"."Employee"
+[DEBUG] [06/05/2016 19:26:11.011] [AsyncExecutor.default-4] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:26:11.011] [AsyncExecutor.default-5] [s.j.J.statement] -Preparing statement: select "Gender", count(1) from "employee"."Employee" group by "Gender"
+[DEBUG] [06/05/2016 19:26:11.011] [AsyncExecutor.default-5] [s.j.J.benchmark] -Execution of prepared statement took 852µs
+[DEBUG] [06/05/2016 19:26:16.016] [AsyncExecutor.default-6] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:26:16.016] [AsyncExecutor.default-6] [s.j.J.benchmark] -Execution of prepared statement took 772µs
+[DEBUG] [06/05/2016 19:26:21.021] [AsyncExecutor.default-7] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:26:21.021] [AsyncExecutor.default-7] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:26:26.026] [AsyncExecutor.default-8] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:26:26.026] [AsyncExecutor.default-8] [s.j.J.benchmark] -Execution of prepared statement took 784µs
+[DEBUG] [06/05/2016 19:26:26.026] [AsyncExecutor.default-8] [s.j.J.statement] -Preparing statement: select "UserId", "UserName", "Email", "Password", "IsDeleted", "EmployeeId" from "employee"."User" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:26:26.026] [AsyncExecutor.default-8] [s.j.J.benchmark] -Execution of prepared statement took 419µs
+[DEBUG] [06/05/2016 19:26:33.033] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee"
+[DEBUG] [06/05/2016 19:26:34.034] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 15ms
+[DEBUG] [06/05/2016 19:26:34.034] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "FirstName" like 'S%'
+[DEBUG] [06/05/2016 19:26:34.034] [AsyncExecutor.default-2] [s.j.J.benchmark] -Execution of prepared statement took 754µs
+[DEBUG] [06/05/2016 19:26:34.034] [AsyncExecutor.default-3] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" order by "FirstName" limit 1
+[DEBUG] [06/05/2016 19:26:34.034] [AsyncExecutor.default-3] [s.j.J.benchmark] -Execution of prepared statement took 3ms
+[DEBUG] [06/05/2016 19:26:34.034] [AsyncExecutor.default-4] [s.j.J.statement] -Preparing statement: select count(1) from "employee"."Employee"
+[DEBUG] [06/05/2016 19:26:34.034] [AsyncExecutor.default-4] [s.j.J.benchmark] -Execution of prepared statement took 587µs
+[DEBUG] [06/05/2016 19:26:34.034] [AsyncExecutor.default-5] [s.j.J.statement] -Preparing statement: select "Gender", count(1) from "employee"."Employee" group by "Gender"
+[DEBUG] [06/05/2016 19:26:34.034] [AsyncExecutor.default-5] [s.j.J.benchmark] -Execution of prepared statement took 685µs
+[DEBUG] [06/05/2016 19:26:39.039] [AsyncExecutor.default-6] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:26:39.039] [AsyncExecutor.default-6] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:26:44.044] [AsyncExecutor.default-7] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:26:44.044] [AsyncExecutor.default-7] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:26:49.049] [AsyncExecutor.default-8] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:26:49.049] [AsyncExecutor.default-8] [s.j.J.benchmark] -Execution of prepared statement took 674µs
+[DEBUG] [06/05/2016 19:26:49.049] [AsyncExecutor.default-8] [s.j.J.statement] -Preparing statement: select "UserId", "UserName", "Email", "Password", "IsDeleted", "EmployeeId" from "employee"."User" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:26:49.049] [AsyncExecutor.default-8] [s.j.J.benchmark] -Execution of prepared statement took 409µs
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee"
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 15ms
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "FirstName" like 'S%'
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-2] [s.j.J.benchmark] -Execution of prepared statement took 4ms
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-3] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" order by "FirstName" limit 1
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-3] [s.j.J.benchmark] -Execution of prepared statement took 867µs
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-4] [s.j.J.statement] -Preparing statement: select count(1) from "employee"."Employee"
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-4] [s.j.J.benchmark] -Execution of prepared statement took 719µs
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-5] [s.j.J.statement] -Preparing statement: select "Gender", count(1) from "employee"."Employee" group by "Gender"
+[DEBUG] [06/05/2016 19:30:34.034] [AsyncExecutor.default-5] [s.j.J.benchmark] -Execution of prepared statement took 742µs
+[DEBUG] [06/05/2016 19:30:39.039] [AsyncExecutor.default-6] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:30:39.039] [AsyncExecutor.default-6] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:30:44.044] [AsyncExecutor.default-7] [s.j.J.statement] -Preparing statement: select x2."FirstName", x3."UserName" from "employee"."Employee" x2, "employee"."User" x3 where x2."EmployeeId" = x3."EmployeeId"
+[DEBUG] [06/05/2016 19:30:44.044] [AsyncExecutor.default-7] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-8] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-9] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-10] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-9] [s.j.J.benchmark] -Execution of prepared statement took 825µs
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-9] [s.j.J.statement] -Preparing statement: select "UserId", "UserName", "Email", "Password", "IsDeleted", "EmployeeId" from "employee"."User" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-8] [s.j.J.benchmark] -Execution of prepared statement took 1ms
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-8] [s.j.J.statement] -Preparing statement: select "UserId", "UserName", "Email", "Password", "IsDeleted", "EmployeeId" from "employee"."User" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-9] [s.j.J.benchmark] -Execution of prepared statement took 509µs
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-8] [s.j.J.benchmark] -Execution of prepared statement took 517µs
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-10] [s.j.J.benchmark] -Execution of prepared statement took 878µs
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-10] [s.j.J.statement] -Preparing statement: select "UserId", "UserName", "Email", "Password", "IsDeleted", "EmployeeId" from "employee"."User" where "EmployeeId" = 101
+[DEBUG] [06/05/2016 19:30:49.049] [AsyncExecutor.default-10] [s.j.J.benchmark] -Execution of prepared statement took 400µs
+[DEBUG] [06/05/2016 19:58:08.008] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing insert statement (returning: EmployeeId,FirstName,LastName,DOB,IsDeleted,Gender): insert into "employee"."Employee" ("FirstName","LastName","DOB","IsDeleted","Gender")  values (?,?,?,?,?)
+[DEBUG] [06/05/2016 19:58:08.008] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared update took 44ms
+[DEBUG] [06/05/2016 19:58:46.046] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing insert statement (returning: EmployeeId,FirstName,LastName,DOB,IsDeleted,Gender): insert into "employee"."Employee" ("FirstName","LastName","DOB","IsDeleted","Gender")  values (?,?,?,?,?)
+[DEBUG] [06/05/2016 19:58:46.046] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared update took 36ms
+[DEBUG] [06/05/2016 19:58:46.046] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing insert statement (returning: UserId,UserName,Email,Password,IsDeleted,EmployeeId): insert into "employee"."User" ("UserName","Email","Password","IsDeleted","EmployeeId")  values (?,?,?,?,?)
+[DEBUG] [06/05/2016 19:58:46.046] [AsyncExecutor.default-2] [s.j.J.benchmark] -Execution of prepared update took 22ms
+[DEBUG] [06/05/2016 19:59:47.047] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing insert statement (returning: EmployeeId,FirstName,LastName,DOB,IsDeleted,Gender): insert into "employee"."Employee" ("FirstName","LastName","DOB","IsDeleted","Gender")  values (?,?,?,?,?)
+[DEBUG] [06/05/2016 19:59:48.048] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared update took 34ms
+[DEBUG] [06/05/2016 19:59:48.048] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing insert statement (returning: UserId,UserName,Email,Password,IsDeleted,EmployeeId): insert into "employee"."User" ("UserId","UserName","Email","Password","IsDeleted","EmployeeId")  values (?,?,?,?,?,?)
+[DEBUG] [06/05/2016 20:03:50.050] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing insert statement (returning: EmployeeId,FirstName,LastName,DOB,IsDeleted,Gender): insert into "employee"."Employee" ("FirstName","LastName","DOB","IsDeleted","Gender")  values (?,?,?,?,?)
+[DEBUG] [06/05/2016 20:03:50.050] [AsyncExecutor.default-2] [s.j.J.benchmark] -Execution of prepared update took 55ms
+[DEBUG] [06/05/2016 20:03:50.050] [AsyncExecutor.default-3] [s.j.J.statement] -Preparing insert statement (returning: UserId,UserName,Email,Password,IsDeleted,EmployeeId): insert into "employee"."User" ("UserId","UserName","Email","Password","IsDeleted","EmployeeId")  values (?,?,?,?,?,?)
+[DEBUG] [06/05/2016 21:57:28.028] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: select * from employee."Employee" 
+[DEBUG] [06/05/2016 21:57:28.028] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 39ms
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: drop table "employee"."User"
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 20ms
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: drop table "employee"."Employee"
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 6ms
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: create table "employee"."Employee" ("EmployeeId" BIGSERIAL NOT NULL PRIMARY KEY,"FirstName" VARCHAR(150) NOT NULL,"LastName" VARCHAR(150) NOT NULL,"DOB" DATE NOT NULL,"IsDeleted" BOOLEAN DEFAULT false NOT NULL,"Gender" VARCHAR NOT NULL)
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 81ms
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: create table "employee"."User" ("UserId" BIGSERIAL NOT NULL PRIMARY KEY,"UserName" VARCHAR(150) NOT NULL,"Email" VARCHAR(150) NOT NULL,"Password" VARCHAR(150) NOT NULL,"IsDeleted" BOOLEAN DEFAULT false NOT NULL,"EmployeeId" BIGINT NOT NULL)
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 49ms
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee"
+[DEBUG] [06/05/2016 22:20:19.019] [AsyncExecutor.default-2] [s.j.J.benchmark] -Execution of prepared statement took 21ms
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: drop table "employee"."User"
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 14ms
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: drop table "employee"."Employee"
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 6ms
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: create table "employee"."Employee" ("EmployeeId" BIGSERIAL NOT NULL PRIMARY KEY,"FirstName" VARCHAR(150) NOT NULL,"LastName" VARCHAR(150) NOT NULL,"DOB" DATE NOT NULL,"IsDeleted" BOOLEAN DEFAULT false NOT NULL,"Gender" VARCHAR NOT NULL)
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 80ms
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: create table "employee"."User" ("UserId" BIGSERIAL NOT NULL PRIMARY KEY,"UserName" VARCHAR(150) NOT NULL,"Email" VARCHAR(150) NOT NULL,"Password" VARCHAR(150) NOT NULL,"IsDeleted" BOOLEAN DEFAULT false NOT NULL,"EmployeeId" BIGINT NOT NULL)
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of prepared statement took 49ms
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.statement] -Preparing statement: insert into "employee"."Employee" ("FirstName","LastName","DOB","IsDeleted","Gender")  values (?,?,?,?,?)
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-1] [s.j.J.benchmark] -Execution of batch took 8ms
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-2] [s.j.J.statement] -Preparing statement: select "EmployeeId", "FirstName", "LastName", "DOB", "IsDeleted", "Gender" from "employee"."Employee"
+[DEBUG] [06/05/2016 22:21:24.024] [AsyncExecutor.default-2] [s.j.J.benchmark] -Execution of prepared statement took 12ms
