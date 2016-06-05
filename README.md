@@ -1,2 +1,2 @@
 # slick-3-samples
-Slick-3 basic queries tryout
+This repository contains slick-3 based queries, with a sample code-generator. 
